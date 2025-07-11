@@ -37,7 +37,7 @@ class GPT(LanguageModel):
     API_QUERY_SLEEP = 0.5
     API_MAX_RETRY = 5
     API_TIMEOUT = 20
-    api_key = "<YOUR_API_KEY>"
+    api_key = "YOUR-API-KEY"
 
     def generate(self, conv: List[Dict], 
                 max_n_tokens: int, 
@@ -53,7 +53,7 @@ class GPT(LanguageModel):
             str: generated response
         '''
         output = self.API_ERROR_OUTPUT
-        client = openai.OpenAI(api_key="<YOUR_API_KEY>")
+        client = openai.OpenAI(api_key="YOUR-API-KEY")
         for _ in range(self.API_MAX_RETRY):
             try:
                 response = client.chat.completions.create(
